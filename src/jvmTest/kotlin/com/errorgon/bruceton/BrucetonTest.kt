@@ -5,7 +5,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
-class BrucetonTest {
+internal class BrucetonTest {
 
     val bruceton = Bruceton("Volt", 2.3, 0.2)
 
@@ -39,5 +39,6 @@ class BrucetonTest {
 
         for (trial in bruceton.trialList) println(trial)
     }
+
 
 }

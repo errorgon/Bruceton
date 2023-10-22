@@ -8,8 +8,12 @@ class Bruceton(private val _unit: String, private val _firstGuess: Double, priva
 
     val trialList: MutableList<Trial> = mutableListOf()
 
+    val results: Results = Results(trialList)
+
+
     init {
         trialList.add(Trial(1, false, firstGuess))
+        results.updateResults(trialList)
     }
 
     fun getNextTrial() = trialList.last()
@@ -21,7 +25,10 @@ class Bruceton(private val _unit: String, private val _firstGuess: Double, priva
 
         val nextLevel = if (result) currentLevel - stepSize else currentLevel + stepSize
         trialList.add(Trial(trialList.size + 1, false, nextLevel))
+        results.updateResults(trialList)
     }
+
+
 
 
 }
